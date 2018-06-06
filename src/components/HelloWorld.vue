@@ -5,10 +5,9 @@
       <el-radio-button label="xm">用户：小明</el-radio-button>
       <el-radio-button label="xh">用户：小红</el-radio-button>
     </el-radio-group>
-
+    <!-- form card -->
       <el-card class="box-card" v-for="(item,index) in makeData" :key="item.index" v-if="item.formShow">
       <div slot="header" class="clearfix"><span>{{item.formName}}</span></div>
-      <!-- form -->
          <el-form  :inline="true" :ref="item.formRef" :model="item.formModel" class="demo-form-inline">
             <el-form-item label="审批人" prop='user' :rules="[{ required: true, message: '审批人不能为空'}]">
                <el-input v-model="item.formModel.user" placeholder="审批人"></el-input>
